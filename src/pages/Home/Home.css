@@ -1,0 +1,31 @@
+section {
+    padding: 1rem;
+}
+
+#nosotros h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 1rem;
+    text-transform: uppercase;
+    color: #005725;
+    width: 100%;
+    padding: 1rem;
+}
+
+#nosotros p {
+    border-top: #005725 4px solid;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-align: justify;
+}
+
+#nosotros span {
+    font-weight: 700;
+    font-style: italic;
+    float: right;
+    margin: 2rem;
+}
+
+.img-container img {
+    width: 100%;
+}
