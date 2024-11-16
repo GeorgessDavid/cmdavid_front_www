@@ -11,11 +11,11 @@ header {
     align-items: center;
 }
 
-.firstHeader div{
+.firstHeader div {
     margin: 0 1rem;
 }
 
-.firstHeader div a{
+.firstHeader div a {
     margin: 0 1rem;
     font-size: 1.125rem;
     text-decoration: none;
@@ -23,15 +23,15 @@ header {
     transition: all 300ms ease-in-out;
 }
 
-.firstHeader div a svg{
+.firstHeader div a svg {
     transition: all 300ms ease-in-out;
 }
 
-.firstHeader div a:hover{
+.firstHeader div a:hover {
     color: #cecece;
 }
 
-.secondHeader{
+.secondHeader {
     width: 100%;
     background-color: #f3f3f3;
     box-shadow: 0 10px 10px #dadada;
@@ -41,17 +41,17 @@ header {
     justify-content: space-between;
 }
 
-.secondHeader div a img{
+.secondHeader div a img {
     width: 70px;
 }
 
-.secondHeader nav ul li{
+.secondHeader nav ul li {
     list-style: none;
     display: inline-block;
     margin: 0 1rem;
 }
 
-.secondHeader nav ul li a{
+.secondHeader nav ul li a {
     text-decoration: none;
     color: #005725;
     font-size: 1.5rem;
@@ -60,6 +60,34 @@ header {
     transition: all 300ms ease-in-out;
 }
 
-.secondHeader nav ul li a:hover{
+.secondHeader nav ul li a:hover {
     color: #212529;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 850px) {
+    .firstHeader {
+        position: sticky;
+        box-shadow: 0 10px 5px #c0c0c0;
+    }
+
+    .drawer_Footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .drawerHeader_title {
+        display: flex;
+        align-items: center;
+    }
+
+    .drawerHeader_title img {
+        width: 3rem;
+    }
+
+    .drawerHeader_title h1 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-left: 0.5rem;
+    }
 }
