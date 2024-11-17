@@ -9,7 +9,10 @@ export const Header = () => {
 
     return (
         <header>
-            {!mobile ? <HamburguerMenu /> :
+            {!mobile ?
+
+                <HamburguerMenu />
+                :
                 <>
                     <FirstHeader />
                     <SecondHeader />

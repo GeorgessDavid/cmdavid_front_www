@@ -2,6 +2,7 @@
 
 html {
   font-size: 16px;
+
 }
 
 * {
@@ -9,4 +10,31 @@ html {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif !important;
+  scroll-behavior: smooth;
+}
+
+
+
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+  html{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  html{
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1279px) {
+  html{
+    font-size: 12px
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+  html{
+    font-size: 9px;
+  }
 }

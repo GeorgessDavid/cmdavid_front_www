@@ -106,6 +106,8 @@ export const HamburguerMenu = () => {
                     </div>
                 </DrawerFooter>
             </Drawer>
+            
+            <img srcSet="/logoCMD.png" alt="Logo CMD" />
         </div>
     )
 }

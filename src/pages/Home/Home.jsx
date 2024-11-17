@@ -1,5 +1,6 @@
 import { Carousel } from '../../components/Section/Carousel';
 import { Nosotros } from '../../components/Section/Nosotros';
+import { Contacto } from '../../components/Section/Contacto';
 import './Home.css'
 
 export const Home = () => {
@@ -14,6 +15,7 @@ export const Home = () => {
         <>
             <Carousel items={items} />
             <Nosotros />
+            <Contacto />
         </>
     )
 }

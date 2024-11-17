@@ -1,5 +1,5 @@
 header {
-    width: 100%;
+    max-width: 100%;
 }
 
 .firstHeader {
@@ -39,6 +39,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000;
 }
 
 .secondHeader div a img {
@@ -64,10 +65,53 @@ header {
     color: #212529;
 }
 
+.scrolled-secondHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #005725;
+    box-shadow: 0 2px 10px #000000;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: all 300ms ease-in;
+}
+
+.scrolled-secondHeader div a img {
+    width: 70px;
+}
+
+.scrolled-secondHeader nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.scrolled-secondHeader nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 300ms ease-in-out;
+}
+
+.scrolled-secondHeader nav ul li a:hover {
+    color: #d3d3d3;
+}
+
+
 @media only screen and (min-width: 200px) and (max-width: 850px) {
     .firstHeader {
-        position: sticky;
+        position: fixed;
         box-shadow: 0 10px 5px #c0c0c0;
+        z-index: 1000;
+    }
+
+    .firstHeader img{
+        width: 60px;
     }
 
     .drawer_Footer {
@@ -90,4 +134,10 @@ header {
         font-weight: bold;
         margin-left: 0.5rem;
     }
-}
+}   
+/* 
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+    header{
+        
+    }
+} */

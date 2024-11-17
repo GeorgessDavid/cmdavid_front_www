@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useMediaScroll } from '../../../hooks/useMediaScroll';
 export const SecondHeader = () =>{
+    const { scrolled } = useMediaScroll(68);
     return (
-        <div className='secondHeader'>
+        <div className={!scrolled ? 'secondHeader' : 'scrolled-secondHeader'}>
                 <div>
                     <a href="/" title='Volver al inicio'><img srcSet="/logoCMD.png"/></a>
                 </div>
