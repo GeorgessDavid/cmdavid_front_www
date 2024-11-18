@@ -1,0 +1,79 @@
+.specialties_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2rem
+}
+
+.specialties_container h1 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.specialties_container>div {
+    width: 30%;
+    margin-bottom: 2rem;
+}
+
+.procedure_itemBox {
+    padding: 0.5rem;
+    width: 25%;
+    transition: all 0.3s ease-in-out;
+}
+
+.procedure_itemBox h2 {
+    width: 90%;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #005725;
+    margin-bottom: 1rem;
+    text-align: start;
+}
+
+.procedure_itemBox:hover{
+    background-color: #c4ffde91;
+    box-shadow: 0 0 10px #212529;
+}
+section.specialties_container>div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1279px) {
+    .procedure_itemBox {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 522px) and (max-width: 768px) {
+    .procedure_itemBox {
+        width: 50%
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 521px) {
+    .procedure_itemBox {
+        width: 100%;
+    }
+    
+    .procedure_itemBox h2 {
+        font-size: 1.625rem;
+        width: 100%;
+        border:none
+    }
+
+    .specialties_container h1 {
+        font-size: 2.5rem;
+    }
+
+    .specialties_container>div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
