@@ -104,10 +104,16 @@ header {
 
 
 @media only screen and (min-width: 200px) and (max-width: 850px) {
+    
     .firstHeader {
-        position: fixed;
         box-shadow: 0 10px 5px #c0c0c0;
         z-index: 1000;
+        width: 100%;
+    }
+
+    .firstHeader.scrolled{
+        position: fixed !important;
+        top: 0;
     }
 
     .firstHeader img{
@@ -130,14 +136,8 @@ header {
     }
 
     .drawerHeader_title h1 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         font-weight: bold;
         margin-left: 0.5rem;
     }
 }   
-/* 
-@media only screen and (min-width: 1280px) and (max-width: 1365px) {
-    header{
-        
-    }
-} */

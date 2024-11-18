@@ -1,6 +1,6 @@
-section {
+section.section-container, section#contacto {
     width: 100%;
-    padding: 10rem 1rem 1rem 1rem;
+    padding: 8rem 1rem 1rem 1rem;
 }
 
 section h2 {
@@ -12,6 +12,7 @@ section h2 {
     width: 100%;
     padding: 1rem;
 }
+
 
 #nosotros p {
     border-top: #005725 4px solid;
@@ -148,9 +149,15 @@ div.section-container {
         align-items: center;
     }
 
+    .column-box iframe{
+        width: 100%;
+        height: 275px;
+    }
+
     .img-container img {
         width: 100%;
         height: 50vh;
         object-fit: cover;
     }
 }
+

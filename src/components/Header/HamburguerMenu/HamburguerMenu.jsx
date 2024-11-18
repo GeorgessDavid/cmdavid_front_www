@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -8,11 +7,13 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { useMediaScroll } from '../../../hooks/useMediaScroll';
 
 export const HamburguerMenu = () => {
     const [open, setOpen] = useState(false)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
+    const { scrolled } = useMediaScroll(80)
     const navData = [
         { name: 'NOSOTROS', link: '/#nosotros' },
         { name: 'CONTACTO', link: '/#contacto' },
@@ -42,7 +43,7 @@ export const HamburguerMenu = () => {
         justifyContent: 'center',
     }));
     return (
-        <div className='firstHeader'>
+        <div className={scrolled? 'firstHeader scrolled' : 'firstHeader'}>
             <IconButton onClick={handleOpen}>
                 <MenuIcon sx={[{
                     color: "white",
@@ -74,11 +75,12 @@ export const HamburguerMenu = () => {
                     <List>
                         {navData.map((item, index) => (
                             <ListItem key={index}>
-                                <ListItemButton component={Link} to={item.link}>
+                                <ListItemButton component='a' href={item.link}>
                                     <ListItemText primary={item.name} sx={[{
                                         color: "#005725",
-                                        fontWeight: "bold"
-                                    }]} />
+                                        fontWeight: "bold",
+                                        fontSize: "1.5rem",
+                                    }]} onClick={handleClose}/>
                                 </ListItemButton>
                             </ListItem>
                         ))}

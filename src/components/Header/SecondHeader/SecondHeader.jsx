@@ -5,7 +5,7 @@ export const SecondHeader = () =>{
     return (
         <div className={!scrolled ? 'secondHeader' : 'scrolled-secondHeader'}>
                 <div>
-                    <a href="/" title='Volver al inicio'><img srcSet="/logoCMD.png"/></a>
+                    <a href="/#" title='Volver al inicio'><img srcSet="/logoCMD.png"/></a>
                 </div>
                 <nav className='secondHeader_nav'>
                     <ul>

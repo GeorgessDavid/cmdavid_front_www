@@ -29,12 +29,18 @@ html {
 
 @media only screen and (min-width: 769px) and (max-width: 1279px) {
   html{
-    font-size: 12px
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  html{
+    font-size: 12px;
   }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 480px) {
   html{
-    font-size: 9px;
+    font-size: 12px;
   }
 }

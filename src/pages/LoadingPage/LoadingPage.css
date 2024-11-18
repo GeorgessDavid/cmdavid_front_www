@@ -1,0 +1,27 @@
+.loading_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    height: 100vh;
+    width: 100%;
+}
+
+.progress_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.loading_box h1{
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 1365px) {
+    .progress_box .progress_value{
+        display: none;
+    }
+}
