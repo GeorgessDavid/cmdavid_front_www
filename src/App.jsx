@@ -3,9 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from './pages/Home/Home'
 import { Especialidades } from './pages/Especialidades/Especialidades'
 import { Estudios } from './pages/Estudios/Estudios'
+import { useActivate } from './hooks/useActivate'
 import './App.css'
 
 function App() {
+  const { activate } = useActivate()
+  activate()
   return (
     <>
       <BrowserRouter>
