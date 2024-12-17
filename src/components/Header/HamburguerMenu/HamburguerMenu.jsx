@@ -8,6 +8,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { useMediaScroll } from '../../../hooks/useMediaScroll';
+import { Link } from 'react-router-dom';
 
 export const HamburguerMenu = () => {
     const [open, setOpen] = useState(false)
@@ -15,10 +16,10 @@ export const HamburguerMenu = () => {
     const handleClose = () => setOpen(false)
     const { scrolled } = useMediaScroll(80)
     const navData = [
-        { name: 'NOSOTROS', link: '/#nosotros' },
-        { name: 'CONTACTO', link: '/#contacto' },
-        { name: 'ESPECIALIDADES', link: '/especialidades' },
-        { name: 'ESTUDIOS', link: '/estudios' }
+        { name: 'NOSOTROS', link: '/#nosotros', type: 'a' },
+        { name: 'CONTACTO', link: '/#contacto', type: 'a' },
+        { name: 'ESPECIALIDADES', to: '/especialidades', type: 'link' },
+        { name: 'ESTUDIOS', to: '/estudios', type: 'link' }
     ]
 
     const DrawerHeader = styled('div')(({ theme }) => ({
@@ -75,7 +76,7 @@ export const HamburguerMenu = () => {
                     <List>
                         {navData.map((item, index) => (
                             <ListItem key={index}>
-                                <ListItemButton component='a' href={item.link}>
+                                <ListItemButton component={item.type === 'a' ? 'a' : Link} to={item.to?? item.to} href={item.link?? item.link}>
                                     <ListItemText primary={item.name} sx={[{
                                         color: "#005725",
                                         fontWeight: "bold",
