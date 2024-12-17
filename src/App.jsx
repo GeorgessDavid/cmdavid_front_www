@@ -1,4 +1,5 @@
 import { Header } from './components/Header/Header'
+import { Footer } from './components/Footer/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from './pages/Home/Home'
 import { Especialidades } from './pages/Especialidades/Especialidades'
@@ -18,6 +19,7 @@ function App() {
           <Route path='/especialidades' element={<Especialidades />} />
           <Route path='/estudios' element={<Estudios />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   )
