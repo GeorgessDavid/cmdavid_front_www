@@ -5,14 +5,14 @@ import './Home.css'
 
 export const Home = () => {
     const items = [
-        '/consultorios_exterior.jpg',
-        '/salaDeEsperaBlanca.jpg',
-        '/jardin_consultorio.jpg',
-        '/sala_de_espera_con_gente_1.jpg',
-        '/sala_de_espera_con_gente_2.jpg',
+        'https://media.consultoriosmedicosdavid.com.ar/img_1.jpg',
+        'https://media.consultoriosmedicosdavid.com.ar/img_2.jpg',
+        'https://media.consultoriosmedicosdavid.com.ar/img_3c.jpg',
+        'https://media.consultoriosmedicosdavid.com.ar/img_4.jpg',
+        'https://media.consultoriosmedicosdavid.com.ar/img_6.jpg',
     ]
     return (
-        <>
+        <>  
             <Carousel items={items} />
             <Nosotros />
             <Contacto />
