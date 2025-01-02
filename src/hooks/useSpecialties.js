@@ -11,7 +11,7 @@ export const useSpecialties = () => {
         const requestSpecialties = async () => {
             setProgress(20);
             try {
-                const response = await fetch('https://api-cmdavid.vercel.app/specialties')
+                const response = await fetch('https://api.consultoriosmedicosdavid.com.ar/specialties')
                 setProgress(70);
                 const data = await response.json();
                 setProgress(100);

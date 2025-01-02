@@ -11,7 +11,7 @@ export const useMedicalProcedures = () => {
         const requestMedicalProcedures = async () => {
             setProgress(20);
             try {
-                const response = await fetch('https://api-cmdavid.vercel.app/medicalProcedures')
+                const response = await fetch('https://api.consultoriosmedicosdavid.com.ar/medicalProcedures')
                 setProgress(70);
                 const data = await response.json();
                 setProgress(100);
