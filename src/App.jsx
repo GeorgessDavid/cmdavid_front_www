@@ -5,6 +5,7 @@ import { Home } from './pages/Home/Home'
 import { Especialidades } from './pages/Especialidades/Especialidades'
 import { Estudios } from './pages/Estudios/Estudios'
 import { useActivate } from './hooks/useActivate'
+import { Navigate } from 'react-router-dom'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/especialidades' element={<Especialidades />} />
           <Route path='/estudios' element={<Estudios />} />
+          <Route path='*' element={<Navigate to='/' replace />} />
         </Routes>
         <Footer />
       </BrowserRouter>
