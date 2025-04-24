@@ -1,7 +1,7 @@
 .specialties_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: start;
     margin: 2rem
 }
 

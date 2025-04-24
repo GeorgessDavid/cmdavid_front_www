@@ -5,6 +5,8 @@ import { Home } from './pages/Home/Home'
 import { Especialidades } from './pages/Especialidades/Especialidades'
 import { Estudios } from './pages/Estudios/Estudios'
 import { Navigate } from 'react-router-dom'
+import WrappedButton from './components/WrappedButton/WrappedButton';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import './App.css'
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
           <Route path='/estudios' element={<Estudios />} />
           <Route path='*' element={<Navigate to='/' replace />} />
         </Routes>
+        <WrappedButton title='Whatsapp' text='Contactanos por Whatsapp' icon={<WhatsAppIcon />} onClick={() => window.open('https://wa.me/5491135958787')} />
         <Footer />
       </BrowserRouter>
     </>
