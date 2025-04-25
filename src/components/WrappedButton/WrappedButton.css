@@ -72,8 +72,8 @@
     }
 
     .download-wrapper .download-wrapper-button:hover {
-        width: 150px;
-        left: 50%;
+        width: 200px;
+        left: 45%;
     }
 }
 
@@ -84,7 +84,7 @@
     }
 
     .download-wrapper .download-wrapper-button:hover {
-        width: 13rem;
+        width: 17rem;
         left: 70%;
     }
 }
@@ -96,7 +96,7 @@
     }
 
     .download-wrapper .download-wrapper-button:hover {
-        width: 13rem;
+        width: 17rem;
         left: 80%;
     }
 }
