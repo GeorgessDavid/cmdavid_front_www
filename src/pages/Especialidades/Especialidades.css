@@ -2,9 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 2rem;
-    margin: 2rem;
-    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
 }
 
 .specialties_container h1 {
@@ -20,7 +19,7 @@
 }
 
 .specialty_itemBox {
-    padding: 0.5rem;
+    padding: 1.5rem 0;
     width: 24%;
     transition: all 0.3s ease-in-out;
 }
@@ -46,8 +45,8 @@
 .specialties_container>div {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     width: 100%;
+    gap: 1rem;
 }
 
 .specialty_itemBox:hover > .line{

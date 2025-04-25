@@ -7,7 +7,7 @@ export const Especialidades = () => {
     let { specialties, loading, progress } = useSpecialties();
     
     return (
-        <>
+        <main>
             {
                 loading ?
                     <LoadingPage progress={progress} />
@@ -25,6 +25,6 @@ export const Especialidades = () => {
 
                     </main>
             }
-        </>
+        </main>
     )
 }

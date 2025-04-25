@@ -2,13 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin: 2rem
+    padding: 2rem;
+    gap: 1rem;
 }
 
 .procedure_container h1 {
-    text-align: start;
-    width: 100%;
-    margin-bottom: 2rem;
     font-size: 2rem;
     color: #005725;
     border-bottom: #005725 solid 3px;
@@ -21,8 +19,8 @@
 }
 
 .procedure_itemBox {
-    padding: 0.5rem;
-    width: 25%;
+    padding: 1.5rem 0;
+    width: 24%;
     transition: all 0.3s ease-in-out;
 }
 
@@ -38,11 +36,11 @@
     border-bottom: #212529 solid 3px;
 }
 
-section.procedure_container>div {
+.procedure_container>div {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: flex-start;
+    gap: 1rem;
 }
 
 .line {
