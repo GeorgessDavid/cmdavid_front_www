@@ -5,13 +5,14 @@ import './Especialidades.css'
 
 export const Especialidades = () => {
     let { specialties, loading, progress } = useSpecialties();
+    
     return (
         <>
             {
                 loading ?
                     <LoadingPage progress={progress} />
                     :
-                    <section className="specialties_container">
+                    <main className="specialties_container">
 
                         <h1>Especialidades</h1>
                         <div>
@@ -22,7 +23,7 @@ export const Especialidades = () => {
                             }
                         </div>
 
-                    </section>
+                    </main>
             }
         </>
     )

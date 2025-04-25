@@ -14,7 +14,7 @@ export const Estudios = () => {
         )
     }
     return (
-        <section className="specialties_container">
+        <section className="procedure_container">
 
             <h1>Estudios</h1>
             <div>
