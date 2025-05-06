@@ -44,7 +44,7 @@ export const HamburguerMenu = () => {
         justifyContent: 'center',
     }));
     return (
-        <div className={scrolled? 'firstHeader scrolled' : 'firstHeader'}>
+        <div className={scrolled ? 'firstHeader scrolled' : 'firstHeader'}>
             <IconButton onClick={handleOpen}>
                 <MenuIcon sx={[{
                     color: "white",
@@ -64,7 +64,7 @@ export const HamburguerMenu = () => {
                 open={open}>
                 <DrawerHeader>
                     <div className='drawerHeader_title'>
-                        <img srcSet="/logoCMD.png" alt="Logo CMD" />
+                        <img srcSet="/cmd_isologo_green.png" alt="Logo CMD" />
                         <h1>Consultorios Médicos David</h1>
                     </div>
                     <IconButton onClick={handleClose}>
@@ -76,12 +76,12 @@ export const HamburguerMenu = () => {
                     <List>
                         {navData.map((item, index) => (
                             <ListItem key={index}>
-                                <ListItemButton component={item.type === 'a' ? 'a' : Link} to={item.to?? item.to} href={item.link?? item.link}>
+                                <ListItemButton component={item.type === 'a' ? 'a' : Link} to={item.to ?? item.to} href={item.link ?? item.link}>
                                     <ListItemText primary={item.name} sx={[{
                                         color: "#005725",
                                         fontWeight: "bold",
                                         fontSize: "1.5rem",
-                                    }]} onClick={handleClose}/>
+                                    }]} onClick={handleClose} />
                                 </ListItemButton>
                             </ListItem>
                         ))}
@@ -109,8 +109,8 @@ export const HamburguerMenu = () => {
                     </div>
                 </DrawerFooter>
             </Drawer>
-            
-            <img srcSet="/logoCMD.png" alt="Logo CMD" />
+
+            <img srcSet="/cmd_isologo_white.png" alt="Logo CMD" />
         </div>
     )
 }

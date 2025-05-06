@@ -65,6 +65,19 @@ header {
     color: #212529;
 }
 
+.secondHeader nav ul li::after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #212529;
+    transition: width 0.3s;
+}
+
+.secondHeader nav ul li:hover::after{
+    width: 100%;
+}
+
 .scrolled-secondHeader {
     position: fixed;
     top: 0;
@@ -117,7 +130,7 @@ header {
     }
 
     .firstHeader img{
-        width: 60px;
+        width: 3.5rem;
     }
 
     .drawer_Footer {
@@ -132,7 +145,7 @@ header {
     }
 
     .drawerHeader_title img {
-        width: 3rem;
+        width: 2.5rem;
     }
 
     .drawerHeader_title h1 {
