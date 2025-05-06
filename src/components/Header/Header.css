@@ -4,7 +4,7 @@ header {
 
 .firstHeader {
     width: 100%;
-    background-color: #005725;
+    background-color: var(--green-color);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -43,7 +43,7 @@ header {
 }
 
 .secondHeader div a img {
-    width: 70px;
+    width: 150px;
 }
 
 .secondHeader nav ul li {
@@ -54,7 +54,7 @@ header {
 
 .secondHeader nav ul li a {
     text-decoration: none;
-    color: #005725;
+    color: var(--green-color);
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -69,7 +69,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #005725;
+    background-color: var(--green-color);
     box-shadow: 0 2px 10px #000000;
     padding: 0 2rem;
     display: flex;
@@ -80,7 +80,7 @@ header {
 }
 
 .scrolled-secondHeader div a img {
-    width: 70px;
+    width: 150px;
 }
 
 .scrolled-secondHeader nav ul li {

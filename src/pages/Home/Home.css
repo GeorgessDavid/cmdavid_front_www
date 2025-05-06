@@ -8,14 +8,14 @@ section h2 {
     font-weight: 700;
     margin: 0 1rem;
     text-transform: uppercase;
-    color: #005725;
+    color: var(--green-color);
     width: 100%;
     padding: 1rem;
 }
 
 
 #nosotros p {
-    border-top: #005725 4px solid;
+    border-top: var(--green-color) 4px solid;
     font-size: 1.5rem;
     padding: 1.5rem;
     text-align: justify;
@@ -36,7 +36,7 @@ div.section-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-top: 4px solid #005725;
+    border-top: 4px solid var(--green-color);
 }
 
 .column-box {
@@ -82,7 +82,7 @@ div.section-container {
 .title-container div{
     position: absolute;
     font-size: 2rem;
-    color: #005725;
+    color: var(--green-color);
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
@@ -94,13 +94,13 @@ div.section-container {
 
 
 .title-container div h1{
-    border-bottom: 3px solid #005725;
+    border-bottom: 3px solid var(--green-color);
     padding: 0 5rem
 }
 
 .title-container div h2{
     font-size: 2rem;
-    color: #005725;
+    color: var(--green-color);
     text-transform: none;
     text-align: center;
     font-weight: bold;
