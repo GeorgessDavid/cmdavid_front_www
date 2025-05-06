@@ -27,12 +27,7 @@
 .specialty_itemBox h2 {
     width: 90%;
     font-size: 1.5rem;
-<<<<<<< HEAD
-    border-bottom: 3px solid var(--green-color);
-    margin-bottom: 1rem;
-=======
     color: #212529;
->>>>>>> 2e5964874a4f733f1914996e964ff5cbf4a031b7
     text-align: start;
     text-transform: capitalize;
 }
