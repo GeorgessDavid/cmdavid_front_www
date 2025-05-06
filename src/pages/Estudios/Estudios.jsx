@@ -14,7 +14,7 @@ export const Estudios = () => {
         )
     }
     return (
-        <section className="specialties_container">
+        <main className="procedure_container">
 
             <h1>Estudios</h1>
             <div>
@@ -25,7 +25,7 @@ export const Estudios = () => {
                 }
             </div>
 
-        </section>
+        </main>
 
     )
 }

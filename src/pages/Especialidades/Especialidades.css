@@ -1,45 +1,72 @@
 .specialties_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
-    margin: 2rem
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 2rem;
 }
 
 .specialties_container h1 {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #005725;
+    border-bottom: #005725 solid 3px;
     font-size: 2rem;
+    width: 100%;
 }
 
 .specialties_container>div {
     width: 30%;
-    margin-bottom: 2rem;
 }
 
 .specialty_itemBox {
-    padding: 0.5rem;
-    width: 25%;
+    padding: 1.5rem 0;
+    width: 24%;
     transition: all 0.3s ease-in-out;
 }
 
 .specialty_itemBox h2 {
     width: 90%;
     font-size: 1.5rem;
+<<<<<<< HEAD
     border-bottom: 3px solid var(--green-color);
     margin-bottom: 1rem;
+=======
+    color: #212529;
+>>>>>>> 2e5964874a4f733f1914996e964ff5cbf4a031b7
     text-align: start;
+    text-transform: capitalize;
 }
 
-.specialty_itemBox:hover{
-    background-color: #c4ffde91;
-    box-shadow: 0 0 10px #212529;
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: #212529;
+    opacity: 0;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
 }
-section.specialties_container>div {
+
+.specialties_container>div {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-between;
+    gap: 1rem;
+}
+
+.specialty_itemBox:hover > .line{
+    width: 0%;
+    opacity: 1;
+    animation: grow 0.5s forwards;
+}
+
+@keyframes grow {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1279px) {
