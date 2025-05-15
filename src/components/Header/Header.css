@@ -43,7 +43,8 @@ header {
 }
 
 .secondHeader div a img {
-    width: 150px;
+    width: 140px;
+    margin: 0.25rem 0;
 }
 
 .secondHeader nav ul li {
@@ -93,7 +94,8 @@ header {
 }
 
 .scrolled-secondHeader div a img {
-    width: 150px;
+    width: 140px;
+    margin: 0.25rem 0;
 }
 
 .scrolled-secondHeader nav ul li {
