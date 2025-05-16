@@ -1,15 +1,17 @@
 import { useMedicalProcedures } from '../../hooks/useMedicalProcedures';
 import { ItemBox } from '../../components/ItemBox/ItemBox';
-import { LoadingPage } from '../LoadingPage/LoadingPage';
+// import { LoadingPage } from '../LoadingPage/LoadingPage';
 import './Estudios.css'
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+
 
 export const Estudios = () => {
-    const { medicalProcedures, loading, progress } = useMedicalProcedures();
+    const { medicalProcedures, loading } = useMedicalProcedures();
 
     if (loading) {
         return (
             <>
-                <LoadingPage progress={progress} />
+                <LoadingScreen/>
             </>
         )
     }
