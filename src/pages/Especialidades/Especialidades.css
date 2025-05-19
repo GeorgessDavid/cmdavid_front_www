@@ -8,8 +8,8 @@
 
 .specialties_container h1 {
     text-transform: uppercase;
-    color: #005725;
-    border-bottom: #005725 solid 3px;
+    color: var(--green-color);
+    border-bottom: var(--green-color) solid 3px;
     font-size: 2rem;
     width: 100%;
 }

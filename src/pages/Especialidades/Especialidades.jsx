@@ -1,16 +1,17 @@
 import { useSpecialties } from "../../hooks/useSpecialties"
 import { ItemBox } from "../../components/ItemBox/ItemBox"
-import { LoadingPage } from '../LoadingPage/LoadingPage'
+// import { LoadingPage } from '../LoadingPage/LoadingPage'
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 import './Especialidades.css'
 
 export const Especialidades = () => {
-    let { specialties, loading, progress } = useSpecialties();
+    let { specialties, loading } = useSpecialties();
     
     return (
         <main>
             {
                 loading ?
-                    <LoadingPage progress={progress} />
+                    <LoadingScreen />
                     :
                     <main className="specialties_container">
 

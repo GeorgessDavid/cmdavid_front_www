@@ -44,7 +44,7 @@ export const HamburguerMenu = () => {
         justifyContent: 'center',
     }));
     return (
-        <div className={scrolled? 'firstHeader scrolled' : 'firstHeader'}>
+        <div className={scrolled ? 'firstHeader scrolled' : 'firstHeader'}>
             <IconButton onClick={handleOpen}>
                 <MenuIcon sx={[{
                     color: "white",
@@ -64,7 +64,7 @@ export const HamburguerMenu = () => {
                 open={open}>
                 <DrawerHeader>
                     <div className='drawerHeader_title'>
-                        <img srcSet="/logoCMD.png" alt="Logo CMD" />
+                        <img srcSet="/cmd_isologo_green.png" alt="Logo CMD" />
                         <h1>Consultorios Médicos David</h1>
                     </div>
                     <IconButton onClick={handleClose}>
@@ -76,12 +76,12 @@ export const HamburguerMenu = () => {
                     <List>
                         {navData.map((item, index) => (
                             <ListItem key={index}>
-                                <ListItemButton component={item.type === 'a' ? 'a' : Link} to={item.to?? item.to} href={item.link?? item.link}>
+                                <ListItemButton component={item.type === 'a' ? 'a' : Link} to={item.to ?? item.to} href={item.link ?? item.link}>
                                     <ListItemText primary={item.name} sx={[{
-                                        color: "#005725",
+                                        color: "#034d37",
                                         fontWeight: "bold",
                                         fontSize: "1.5rem",
-                                    }]} onClick={handleClose}/>
+                                    }]} onClick={handleClose} />
                                 </ListItemButton>
                             </ListItem>
                         ))}
@@ -91,7 +91,7 @@ export const HamburguerMenu = () => {
                         <ListItem>
                             <ListItemButton component='a' href="https://app.consultoriosmedicosdavid.com.ar/login">
                                 <ListItemText primary="Prestadores" sx={[{
-                                    color: "#005725",
+                                    color: "#034d37",
                                     fontWeight: "bold",
                                     textTransform: 'uppercase'
                                 }]} />
@@ -102,15 +102,15 @@ export const HamburguerMenu = () => {
                 <Divider />
                 <DrawerFooter>
                     <div className='drawer_Footer'>
-                        <a href="https://www.instagram.com/consultoriosmedicosdavid" target='_blank'><InstagramIcon sx={[{ color: "#005725", margin: "0 0.5rem", fontSize: "2rem" }]} /></a>
-                        <a href='https://www.facebook.com/ConsultoriosMedicosDavid' target='_blank'><FacebookIcon sx={[{ color: "#005725", margin: "0 0.5rem", fontSize: "2rem" }]} /></a>
-                        <a href="https://api.whatsapp.com/send?phone=5491135958787" target='_blank'><WhatsAppIcon sx={[{ color: "#005725", margin: "0 0.5rem", fontSize: "2rem" }]} /></a>
-                        <a href="https://www.linkedin.com/company/consultoriosmedicosdavid" target='_blank'><LinkedInIcon sx={[{ color: "#005725", margin: "0 0.5rem", fontSize: "2rem" }]} /></a>
+                        <a href="https://www.instagram.com/consultoriosmedicosdavid" target='_blank'><InstagramIcon sx={[{ color: "#034d37", margin: "0 0.5rem", fontSize: "2rem" }]} /></a>
+                        <a href='https://www.facebook.com/ConsultoriosMedicosDavid' target='_blank'><FacebookIcon sx={[{ color: "#034d37", margin: "0 0.5rem", fontSize: "2rem" }]} /></a>
+                        <a href="https://api.whatsapp.com/send?phone=5491135958787" target='_blank'><WhatsAppIcon sx={[{ color: "#034d37", margin: "0 0.5rem", fontSize: "2rem" }]} /></a>
+                        <a href="https://www.linkedin.com/company/consultoriosmedicosdavid" target='_blank'><LinkedInIcon sx={[{ color: "#034d37", margin: "0 0.5rem", fontSize: "2rem" }]} /></a>
                     </div>
                 </DrawerFooter>
             </Drawer>
-            
-            <img srcSet="/logoCMD.png" alt="Logo CMD" />
+
+            <img srcSet="/cmd_isologo_white.png" alt="Logo CMD" />
         </div>
     )
 }
