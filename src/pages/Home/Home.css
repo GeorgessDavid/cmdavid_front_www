@@ -16,18 +16,21 @@ section h2 {
 
 #nosotros p {
     border-top: var(--green-color) 4px solid;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 1.5rem;
     text-align: justify;
+    color: #212529
 }
 
-#nosotros span {
-    font-weight: 700;
-    font-style: italic;
-    float: right;
-    margin: 2rem;
+#nosotros h3{
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    color: var(--green-color);
 }
 
+#nosotros ul > li {
+margin: 0.5rem 3rem;
+}   
 .img-container img {
     width: 100%;
 }
