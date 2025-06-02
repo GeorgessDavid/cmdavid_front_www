@@ -11,7 +11,7 @@ export const useMedicalProcedures = () => {
         const requestMedicalProcedures = async () => {
             setProgress(20);
             try {
-                const response = await fetch('https://api.consultoriosmedicosdavid.com.ar/medicalProcedures')
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/medicalProcedures`)
                 setProgress(70);
                 const data = await response.json();
                 setProgress(100);
