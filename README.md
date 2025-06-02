@@ -28,3 +28,7 @@ Este proyecto representa a un centro médico ubicado en Santos Lugares, fundado 
 Actualmente mantenido por [Georges David](https://www.georgesdavid.dev).
 
 Para sugerencias o mejoras, no dudes en abrir un [Issue](https://github.com/GeorgessDavid/cmdavid_front_www/issues) o enviar un [Pull Request](https://github.com/GeorgessDavid/cmdavid_front_www/pulls).
+
+## 📄 Licencia
+Este proyecto está licenciado bajo la [Licencia MIT](./LICENSE).
+También está disponible una [traducción no oficial al español](./LICENSE.es.md) para referencia.
