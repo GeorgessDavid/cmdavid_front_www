@@ -24,7 +24,7 @@ export const Home = () => {
     }
 
     const handleOpenLocation = () => {
-        window.open('https://maps.app.goo.gl/LLXuZfKs39o8zbZJ7', '_blank');
+        window.open('https://maps.app.goo.gl/XoXaBLuf2e7UkjHu5', '_blank');
     }
 
     const Footer = () => {
