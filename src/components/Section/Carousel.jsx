@@ -1,19 +1,19 @@
-import Slider from 'react-slick'
+// import Slider from 'react-slick'
 import propTypes from 'prop-types'
 import './styles/slick.css';
 import './styles/slick-theme.css';
 import { useState } from 'react';
 
 export const Carousel = ({ items }) => {
-    const settings = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 5000,
-    }
+    // const settings = {
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     arrows: false,
+    //     autoplay: true,
+    //     autoplaySpeed: 5000,
+    // }
 
     const [imgLoaded, setImgLoaded] = useState(false);
 
@@ -27,15 +27,15 @@ export const Carousel = ({ items }) => {
                     </div>
                 </div>
             }
-            <Slider {...settings}>
+            {/* <Slider {...settings}>
                 {
-                    items.map((item, index) => (
-                        <div key={index} className='img-container'>
-                            <img src={item} className='d-block w-100' onLoad={() => setImgLoaded(true)} />
+                    items.map((item, index) => ( */}
+                        <div  className='img-container'>
+                            <img src={items[0]} className='d-block w-100' onLoad={() => setImgLoaded(true)} />
                         </div>
-                    ))
-                }
-            </Slider>
+            {/* //         ))
+            //     }
+            // </Slider> */}
         </div>
     );
 }
