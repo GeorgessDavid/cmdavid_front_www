@@ -5,11 +5,9 @@ import './Home.css'
 
 export const Home = () => {
     const items = [
-        'https://media.consultoriosmedicosdavid.com.ar/img_1.jpg',
-        'https://media.consultoriosmedicosdavid.com.ar/img_2.jpg',
-        'https://media.consultoriosmedicosdavid.com.ar/img_3c.jpg',
-        'https://media.consultoriosmedicosdavid.com.ar/img_4.jpg',
-        'https://media.consultoriosmedicosdavid.com.ar/img_6.jpg',
+        'https://media.consultoriosmedicosdavid.com.ar/silberman1346/1346_a.jpg',
+        // 'https://media.consultoriosmedicosdavid.com.ar/silberman1346/1346_b.jpg',
+        // 'https://media.consultoriosmedicosdavid.com.ar/silberman1346/1346_c.jpg',
     ]
     return (
         <>  
