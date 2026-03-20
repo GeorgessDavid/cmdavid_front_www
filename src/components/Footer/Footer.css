@@ -10,4 +10,5 @@ footer.footer {
 
 .footer>img {
     width: 5rem;
+    clip-path: inset(20% 0 20%);
 }
