@@ -39,6 +39,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${ubuntu.variable} ${inter.variable} h-full`}
       suppressHydrationWarning
     >
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel="stylesheet" />
+      </head>
       <body className={`${ubuntu.className} ${inter.className}`}>
         <Providers>
           <Header />

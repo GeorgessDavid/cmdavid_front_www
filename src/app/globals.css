@@ -175,3 +175,7 @@ body {
   color: var(--on-background);
   font-family: var(--font-body) !important;
 }
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

@@ -10,15 +10,22 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 export const Header = () => {
     const [resolvedTheme, setResolvedTheme] = useState<string>('dark');
     const { resolvedTheme: nextResolvedTheme, setTheme } = useTheme();
+
     const toggleTheme = () => {
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
     };
+
     useEffect(() => {
         setResolvedTheme(nextResolvedTheme || 'dark');
     }, [nextResolvedTheme]);
+
+    const hrefPrestadores = () => {
+        window.open('https://app.consultoriosmedicosdavid.com.ar', '_blank')
+    }
+
     return (
         <header
-            className="sticky top-0 w-full z-50 bg-surface/70 backdrop-blur-xl transition-all duration-300"
+            className="sticky top-0 w-full z-50 bg-surface/70 backdrop-blur-xl transition-all duration-300 shadow-md shadow-(color:--primary)/20"
         >
             <nav className="flex justify-between items-center px-8 py-4 w-full mx-auto">
                 <div className="text-2xl font-bold tracking-tight text-(--logo-text-primary)  font-ubuntu flex items-center gap-2">
@@ -27,9 +34,9 @@ export const Header = () => {
                 </div>
                 <div className="hidden md:flex items-center space-x-8">
                     <a className="text-primary border-b-2 border-primary pb-1 font-medium transition-all duration-300"
-                        href="#">Inicio</a>
+                        href="/#home">Inicio</a>
                     <a className="text-on-surface-variant hover:text-primary font-medium transition-all duration-300"
-                        href="#">Especialidades</a>
+                        href="/#specialties">Especialidades</a>
                     <a className="text-on-surface-variant hover:text-primary font-medium transition-all duration-300" href="#">Equipo
                         Médico</a>
                     <a className="text-on-surface-variant hover:text-primary font-medium transition-all duration-300"
@@ -44,6 +51,7 @@ export const Header = () => {
                         </button>
                     </Tooltip>
                     <button
+                        onClick={hrefPrestadores}
                         className="bg-primary text-on-primary px-6 py-2.5 rounded-md font-semibold text-sm hover:scale-95 active:scale-90 transition-all duration-200 cursor-pointer">
                         Prestadores <ArrowOutwardIcon />
                     </button>
