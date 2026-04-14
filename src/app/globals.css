@@ -27,7 +27,7 @@
   --tertiary: #904a43;
   --on-tertiary: #ffffff;
   --on-secondary: #ffffff;
-  --surface-tint: #034d37;
+  --surface-tint: #ffffff;
   --outline: #72777f;
   --tertiary-container: #ffdad6;
   --outline-variant: #c4c7cf;
@@ -52,6 +52,7 @@
   --logo-text-primary: #034d37;
   --font-ubuntu: 'Ubuntu', sans-serif;
   --font-inter: 'Inter', sans-serif;
+  --custom-accent-primary: #034d37;
 }
 
 .dark {
@@ -104,6 +105,7 @@
   --surface-dim: #11131a;
   --on-tertiary-fixed: #390b0a;
   --logo-text-primary: #ffffff;
+  --custom-accent-primary: #282a31;
   --font-ubuntu: 'Ubuntu', sans-serif;
   --font-inter: 'Inter', sans-serif;
 }

@@ -121,8 +121,111 @@ export default function Home() {
                                 <SpecialtyCard icon="urology" title="Urología" />
                                 <SpecialtyCard icon="endocrinology" title="Endocrinología" />
                             </div>
-                            <span className="text-primary text-xl font-bold cursor-pointer flex gap-2 hover:gap-6 transition-all duration-300 justify-end" onClick={openSpecialties}>Ver todas <ArrowOutwardIcon sx={{ fontSize: 24 }} /> </span>
+                            <span className="text-primary text-xl font-bold cursor-pointer flex gap-2 hover:gap-6 transition-all duration-300 justify-end" onClick={openSpecialties}>Ver todas <ArrowOutwardIcon sx={{ fontSize: 24 }} /></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="aboutUs" className="py-32 bg-surface-container-low">
+                <div className="max-w-7xl mx-auto px-8">
+                    <div className="flex flex-col lg:flex-row items-center gap-20">
+                        <div className="lg:w-1/2 relative">
+                            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-8 border-surface-container-high">
+                                <Image
+                                    src="https://media.consultoriosmedicosdavid.com.ar/silberman1346/1346_a.jpg"
+                                    alt="CMD"
+                                    width={1920}
+                                    height={1080}
+                                    className="w-full h-full object-cover"
+                                    loading="eager"
+                                />
+                            </div>
+                            <div className="absolute -bottom-10 -right-10 bg-(--custom-accent-primary) p-8 rounded-2xl shadow-2xl hidden md:block ">
+                                <p className="text-5xl font-black text-surface-tint mb-1 tracking-tighter">9+</p>
+                                <p className="text-white/80 font-medium text-sm">Años de trayectoria</p>
+                            </div>
+                        </div>
+                        <div className="lg:w-1/2 flex flex-col gap-4">
+                            <span className="text-primary  font-bold tracking-widest text-xs uppercase mb-4 block">Sobre Nosotros</span>
+                            <h2 className="text-5xl font-extrabold text-on-surface mb-9 leading-tight tracking-tight">Ética profesional al servicio <br /> de tu salud</h2>
+                            <p>
+                                <span className="text-primary font-semibold">Consultorios Médicos David</span> fue fundado en el año 2016, dando continuidad a una extensa trayectoria médica iniciada en la localidad de Sáenz Peña. La elección de Santos Lugares marcó el comienzo de una nueva etapa, con la visión de crear un espacio que combinara experiencia, compromiso y vocación de servicio.
+                            </p>
+                            {/* 
+                            TODO - Cards con las visiones y los valores
+                            <p>
+                                Desde el inicio, <span className="text-primary font-semibold">nuestros valores</span> han sido guiados con tres principios fundamentales:
+                            </p>
+                            <div className="ms-8 flex flex-col gap-2">
+                                <div className="flex gap-4">
+                                    <span className="material-symbols-outlined text-primary">handshake</span>
+                                    <span className="text-on-surface">Relación médico-paciente basada en la confianza.</span>
+                                </div>
+                                <div className="flex gap-4">
+                                    <span className="material-symbols-outlined text-primary">sentiment_satisfied_alt</span>
+                                    <span className="text-on-surface">Calidez y buen trato en cada consulta.</span>
+                                </div>
+                                <div className="flex gap-4">
+                                    <span className="material-symbols-outlined text-primary">verified</span>
+                                    <span className="text-on-surface">Compromiso ético y humano con cada persona.</span>
+                                </div>
+                            </div> */}
+                            <p>
+                                A lo largo de los años, hemos ampliado nuestras instalaciones, sumado especialidades médicas y optimizado nuestros servicios con sistemas informatizados para turnos, estadísticas y gestión de historias clínicas, buscando siempre una atención más eficiente y personalizada.
+                            </p>
+                            <p>
+                                Nos diferenciamos por el trato cercano de nuestro equipo médico y administrativo, que trabaja día a día con responsabilidad y dedicación, priorizando la calidad humana y profesional en cada consulta.
+                            </p>
+                            {/* 
+                            <p>
+                            <span className="text-primary font-semibold">Nuestra visión</span> es seguir creciendo y fortaleciendo el compromiso con la atención médica a través de:
+                            </p>
+                            <div className="ms-8 flex flex-col gap-2">
+                            <div className="flex gap-4">
+                                    <span className="material-symbols-outlined text-primary">medical_services</span>
+                                    Incorporar más especialidades médicas.
+                                </div>
+                                <div className="flex gap-4">
+                                    <span className="material-symbols-outlined text-primary">domain</span>
+                                    Ampliar la infraestructura.
+                                </div>
+                                <div className="flex gap-4">
+                                    <span className="material-symbols-outlined text-primary">monitor_heart</span>
+                                    Invertir en tecnología que mejore la atención médica.
+                                </div>
+                            </div> */}
+                            <p> Creemos en una medicina centrada en las personas con vocación y compromiso. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="py-32 bg-surface-low">
+                <div className="max-w-7xl mx-auto px-8 flex flex-col gap-4">
+                    <h3 className="text-2xl font-bold text-on-surface">Nuestros Valores</h3>
+                    <div className="h-1.5 w-20 bg-primary"></div>
+                    <div className="w-full flex justify-center gap-12">
+                        <div className="flex flex-col gap-2 items-center bg-surface-container rounded-full p-8 w-3xl border-0 border-primary hover:border-l-4 hover:border-primary transition-all duration-100">
+                            <div className="relative">
+                                <div className="absolute inset-0 bg-primary/5 blur-2xl rounded-full"></div>
+                                <span className="material-symbols-outlined !text-4xl text-primary relative z-10">handshake</span>
+                            </div>
+                            <span className="text-on-surface font-semibold">Relación médico-paciente basada en la confianza.</span>
+                        </div>
+                        <div className="flex flex-col gap-2 items-center bg-surface-container rounded-full p-8 w-3xl border-0 border-primary hover:border-l-4 hover:border-primary transition-all duration-100">
 
+
+                            <div className="relative">
+                                <div className="absolute inset-0 bg-primary/5 blur-2xl rounded-full"></div>
+                                <span className="material-symbols-outlined !text-4xl text-primary relative z-10">sentiment_satisfied_alt</span>
+                            </div>
+                            <span className="text-on-surface font-semibold">Calidez y buen trato en cada consulta.</span>
+                        </div>
+                        <div className="flex flex-col gap-2 items-center bg-surface-container rounded-full p-8 w-3xl border-0 border-primary hover:border-l-4 hover:border-primary transition-all duration-100">
+                            <div className="relative">
+                                <div className="absolute inset-0 bg-primary/5 blur-2xl rounded-full"></div>
+                                <span className="material-symbols-outlined !text-4xl text-primary relative z-10">verified</span>
+                            </div>
+                            <span className="text-on-surface font-semibold">Compromiso ético y humano con cada persona.</span>
                         </div>
                     </div>
                 </div>
