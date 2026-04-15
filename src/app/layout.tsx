@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Ubuntu, Inter } from "next/font/google";
 import { Providers } from '@/theme/Providers';
 import { Header, Footer } from '@/components';
@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: '1.0',
+}
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
 
   return (
@@ -48,7 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className={`${ubuntu.className} ${inter.className}`}>
         <Providers>
-          <Header  />
+          <Header />
           {children}
           <Footer />
         </Providers>

@@ -1,11 +1,12 @@
 'use client';
 import Image from "next/image";
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
-import { useMetrics } from '@/hooks';
+import { useMetrics, useReviews } from '@/hooks';
 import Link from "next/link";
 
 export default function Home() {
     const { totalPatients, totalConsultas, totalProfesionales, totalEspecialidades } = useMetrics();
+    const { reviews, loading } = useReviews();
     const openSpecialties = () => {
         window.open('/specialties', '_blank');
     }
@@ -30,7 +31,7 @@ export default function Home() {
                         <span className="inline-block py-1.5 px-4 mb-6 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest rounded-full border border-primary/20">
                             Servicios Médicos de Excelencia
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-on-surface">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-on-surface">
                             Cuidando tu salud con <span className="text-primary">dedicación</span> y <span
                                 className="text-primary">profesionalismo</span>
                         </h1>
@@ -38,8 +39,8 @@ export default function Home() {
                             En Consultorios Médicos David, ofrecemos atención médica integral con un equipo de especialistas altamente calificados y tecnología de vanguardia.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <button className="bg-primary text-on-primary px-10 py-4 rounded-md font-bold text-lg hover:shadow-xl hover:opacity-90 transition-all duration-300 cursor-pointer">Nuestras Especialidades</button>
-                            <button className="border-2 border-primary text-primary px-10 py-rounded-md font-bold text-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer">Conocé a nuestro equipo médico</button>
+                            <button className="bg-primary w-full md:w-auto text-on-primary px-10 py-4 rounded-md font-bold text-lg hover:shadow-xl hover:opacity-90 transition-all duration-300 cursor-pointer">Nuestras Especialidades</button>
+                            <button className="border-2 border-primary w-full md:w-auto text-primary px-10 py-rounded-md font-bold text-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer">Conocé a nuestro equipo médico</button>
                         </div>
                     </div>
                 </div>
@@ -98,7 +99,7 @@ export default function Home() {
                                 Diagnóstico y tratamiento avanzado de patologías traumatológicas con tecnología de última generación y un equipo de especialistas altamente calificados.
                             </p>
                         </div>
-                        <div className="md:col-span-8 bg-surface-container-low border border-outline-variant/30 rounded-2xl p-10 h-[400px] flex flex-col justify-between">
+                        <div className="md:col-span-8 bg-surface-container-low border border-outline-variant/30 rounded-2xl p-10 h-[450px] flex flex-col justify-between">
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-12 w-full">
                                 <SpecialtyCard icon="gastroenterology" title="Gastroenterología" />
                                 <SpecialtyCard icon="female" title="Ginecología" />
@@ -107,7 +108,7 @@ export default function Home() {
                                 <SpecialtyCard icon="urology" title="Urología" />
                                 <SpecialtyCard icon="endocrinology" title="Endocrinología" />
                             </div>
-                            <span className="text-primary text-xl font-bold cursor-pointer flex gap-2 hover:gap-6 transition-all duration-300 justify-end" onClick={openSpecialties}>Ver todas <ArrowOutwardIcon sx={{ fontSize: 24 }} /></span>
+                            <span className="text-primary text-xl mt-8 font-bold cursor-pointer flex gap-2 hover:gap-6 transition-all duration-300 justify-end" onClick={openSpecialties}>Ver todas <ArrowOutwardIcon sx={{ fontSize: 24 }} /></span>
                         </div>
                     </div>
                 </div>
@@ -188,7 +189,7 @@ export default function Home() {
             </section>
             <section className="py-24 bg-surface overflow-hidden" id="contact">
                 <div className="max-w-7xl mx-auto px-8">
-                    <div className="relative rounded-3xl overflow-hidden bg-primary-container p-16 md:p-24 flex flex-col items-center text-center">
+                    <div className="relative rounded-3xl overflow-hidden bg-primary-container p-8 md:p-24 flex flex-col items-center text-center">
                         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-20"></div>
                         <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-8 relative z-10">
                             Cuidá de tu salud con un equipo médico que te acompaña
@@ -201,6 +202,19 @@ export default function Home() {
                         </button>
                         <Link className="text-white mt-12 font-semibold hover:underline" href="tel:1147572389">O llamanos al 4757-2389</Link>
                         <p className="text-white/80 text-lg mt-6">Lunes a Viernes de 8 a 19hs - Sábados de 8 a 13hs</p>
+                    </div>
+                </div>
+            </section>
+            <section className="py-24 bg-surface-container overflow-hidden">
+                <div className="mx-auto px-12">
+                    <h3 className="text-4xl font-bold text-on-surface text-center mb-12">¿Qué opinan nuestros pacientes?</h3>
+                    <div className="w-full flex items-center justify-center mb-12">
+                        <div className="h-1.5 w-20 bg-primary"></div>
+                    </div>  
+                    <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap md:flex-wrap lg:flex-nowrap justify-center">
+                        {reviews?.map((review, index) => (
+                            <ReviewCard key={index} stars={review.rating} nombre={review.author} opinion={review.text} profilePicture={review.profilePhotoUrl} relativePublishTimeDescription={review.relativePublishTimeDescription} />
+                        ))}
                     </div>
                 </div>
             </section>
@@ -229,6 +243,26 @@ const VisionCard = ({ icon, title, description }: { icon: string, title: string,
             </div>
             <h3 className="text-xl font-bold text-on-surface mb-3">{title}</h3>
             <p className="text-on-surface-variant leading-relaxed">{description}</p>
+        </div>
+    )
+}
+
+const ReviewCard = ({ stars, nombre, opinion, profilePicture, relativePublishTimeDescription }: { stars: number, nombre: string, opinion: string, profilePicture: string, relativePublishTimeDescription: string }) => {
+    return (
+        <div className="w-full sm:w-2xl h-2xl relative p-8 bg-surface-container-low rounded-2xl border border-outline-variant/30 hover:border-primary/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-start">
+            <div className="flex items-center gap-2 mb-4">
+                {Array.from({ length: stars }).map((_, index) => (
+                    <span key={index} className="material-symbols-outlined text-yellow-500 fill-star">star</span>
+                ))}
+            </div>
+            <p className="text-on-surface-variant mb-4 h-full line-clamp-11">{opinion}</p>
+            <div className="flex items-center gap-2">
+                <img src={profilePicture} alt={nombre} className="w-10 h-10 rounded-full" />
+                <div className="flex flex-col items-start">
+                    <span className="text-on-surface font-semibold">{nombre}</span>
+                    <span className="text-on-surface-variant text-sm">{relativePublishTimeDescription}</span>
+                </div>
+            </div>
         </div>
     )
 }

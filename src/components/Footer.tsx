@@ -7,7 +7,7 @@ import { Facebook, Instagram, LinkedIn, WhatsApp, Mail } from "@mui/icons-materi
 const Footer = () => {
     return (
         <footer className="bg-surface-container-low w-full border-t border-outline-variant/30">
-            <div className="flex justify-between items-start gap-16 px-8 py-20 max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-between items-start gap-16 px-8 py-20 max-w-7xl mx-auto">
                 <div className="space-y-6">
                     <p className="text-2xl font-bold text-primary">Consultorios Médicos David</p>
                     <p className="text-on-surface-variant text-base leading-relaxed max-w-xs">Ética profesional al servicio de tu salud.</p>
@@ -48,7 +48,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <h4 className="text-lg font-bold text-on-surface mb-8">Ubicación</h4>
-                    <div className="rounded-xl overflow-hidden h-52 mb-6 border border-outline-variant/30 shadow-md">
+                    <div className="rounded-xl overflow-hidden w-xs sm:w-md h-52 mb-6 border border-outline-variant/30 shadow-md">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.3109936539236!2d-58.54627802426!3d-34.596296672956996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb78ee9f69aab%3A0xac7fcba01d35650a!2sConsultorios%20M%C3%A9dicos%20David!5e0!3m2!1ses-419!2sar!4v1776205289989!5m2!1ses-419!2sar" width="400" height="200" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <p className="text-on-surface-variant text-base">
@@ -58,7 +58,7 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
-            <div className="w-full  flex justify-center border-t border-t-on-surface/10">
+            <div className="flex w-full max-w-7xl mx-auto text-center justify-center border-t border-t-on-surface/10">
                 <span className="text-sm text-on-surface/70 my-8"> © 2026 Consultorios Médicos David. Todos los derechos reservados.</span>
             </div>
         </footer>
