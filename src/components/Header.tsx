@@ -6,11 +6,14 @@ import { Tooltip } from '@mui/material';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import { usePathname } from 'next/navigation';
 
 export const Header = () => {
     const [resolvedTheme, setResolvedTheme] = useState<string>('dark');
     const { resolvedTheme: nextResolvedTheme, setTheme } = useTheme();
+    const path = usePathname();
 
+    console.log(path)
     const toggleTheme = () => {
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
     };
@@ -33,13 +36,13 @@ export const Header = () => {
                     Consultorios Médicos David
                 </div>
                 <div className="hidden md:flex items-center space-x-8">
-                    <a className="text-primary border-b-2 border-primary pb-1 font-medium transition-all duration-300"
-                        href="/#home">Inicio</a>
-                    <a className="text-on-surface-variant hover:text-primary font-medium transition-all duration-300"
-                        href="/#specialties">Especialidades</a>
-                    <a className="text-on-surface-variant hover:text-primary font-medium transition-all duration-300" href="#">Equipo
+                    <a className={`${path === '/' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
+                        href="/">Inicio</a>
+                    <a className={`${path === '/specialties' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
+                        href="/specialties">Especialidades</a>
+                    <a className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`} href="#">Equipo
                         Médico</a>
-                    <a className="text-on-surface-variant hover:text-primary font-medium transition-all duration-300"
+                    <a className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
                         href="#">Estudios</a>
                 </div>
                 <div className="flex items-center gap-2">

@@ -1,12 +1,17 @@
 'use client';
 import Image from "next/image";
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import { useMetrics } from '@/hooks';
+import Link from "next/link";
 
 export default function Home() {
+    const { totalPatients, totalConsultas, totalProfesionales, totalEspecialidades } = useMetrics();
     const openSpecialties = () => {
         window.open('/specialties', '_blank');
     }
-
+    const openTurnos = () => {
+        window.open('https://api.whatsapp.com/send/?phone=5491135958787&text=Hola, quisiera solicitar un turno.&type=phone_number&app_absent=0', '_blank');
+    }
     return (
         <main>
             <section className="relative min-h-screen items-center pt-20 overflow-hidden bg-surface-container-low" id="home">
@@ -93,25 +98,6 @@ export default function Home() {
                                 Diagnóstico y tratamiento avanzado de patologías traumatológicas con tecnología de última generación y un equipo de especialistas altamente calificados.
                             </p>
                         </div>
-                        {/* Tarjeta de Gastroenterología */}
-                        {/* <div className="md:col-span-8 group relative overflow-hidden bg-surface-container-low border border-outline-variant/30 rounded-2xl p-10 h-[400px] flex flex-col justify-end transition-all duration-500 hover:shadow-2xl hover:border-primary/20">
-                            <div className="mb-6 relative">
-                                <div className="absolute inset-0 bg-primary/5 blur-2xl rounded-full"></div>
-                                <span className="material-symbols-outlined text-7xl text-primary realtive z-10">gastroenterology</span>
-                            </div>
-                            <Image
-                                src="/images.jfif"
-                                alt="Gastroenterología"
-                                width={1920}
-                                height={1080}
-                                className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"
-                                loading="eager"
-                            />
-                            <h3 className="text-3xl font-bold text-on-surface mb-3">Gastroenterología</h3>
-                            <p className="text-on-surface-variant text-base">
-                                Diagnóstico y tratamiento avanzado de patologías gastroenterológicas con tecnología de última generación y un equipo de especialistas altamente calificados.
-                            </p>
-                        </div> */}
                         <div className="md:col-span-8 bg-surface-container-low border border-outline-variant/30 rounded-2xl p-10 h-[400px] flex flex-col justify-between">
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-12 w-full">
                                 <SpecialtyCard icon="gastroenterology" title="Gastroenterología" />
@@ -126,6 +112,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
             <section id="aboutUs" className="py-32 bg-surface-container-low">
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="flex flex-col lg:flex-row items-center gap-20">
@@ -151,82 +138,69 @@ export default function Home() {
                             <p>
                                 <span className="text-primary font-semibold">Consultorios Médicos David</span> fue fundado en el año 2016, dando continuidad a una extensa trayectoria médica iniciada en la localidad de Sáenz Peña. La elección de Santos Lugares marcó el comienzo de una nueva etapa, con la visión de crear un espacio que combinara experiencia, compromiso y vocación de servicio.
                             </p>
-                            {/* 
-                            TODO - Cards con las visiones y los valores
-                            <p>
-                                Desde el inicio, <span className="text-primary font-semibold">nuestros valores</span> han sido guiados con tres principios fundamentales:
-                            </p>
-                            <div className="ms-8 flex flex-col gap-2">
-                                <div className="flex gap-4">
-                                    <span className="material-symbols-outlined text-primary">handshake</span>
-                                    <span className="text-on-surface">Relación médico-paciente basada en la confianza.</span>
-                                </div>
-                                <div className="flex gap-4">
-                                    <span className="material-symbols-outlined text-primary">sentiment_satisfied_alt</span>
-                                    <span className="text-on-surface">Calidez y buen trato en cada consulta.</span>
-                                </div>
-                                <div className="flex gap-4">
-                                    <span className="material-symbols-outlined text-primary">verified</span>
-                                    <span className="text-on-surface">Compromiso ético y humano con cada persona.</span>
-                                </div>
-                            </div> */}
                             <p>
                                 A lo largo de los años, hemos ampliado nuestras instalaciones, sumado especialidades médicas y optimizado nuestros servicios con sistemas informatizados para turnos, estadísticas y gestión de historias clínicas, buscando siempre una atención más eficiente y personalizada.
                             </p>
                             <p>
                                 Nos diferenciamos por el trato cercano de nuestro equipo médico y administrativo, que trabaja día a día con responsabilidad y dedicación, priorizando la calidad humana y profesional en cada consulta.
                             </p>
-                            {/* 
-                            <p>
-                            <span className="text-primary font-semibold">Nuestra visión</span> es seguir creciendo y fortaleciendo el compromiso con la atención médica a través de:
-                            </p>
-                            <div className="ms-8 flex flex-col gap-2">
-                            <div className="flex gap-4">
-                                    <span className="material-symbols-outlined text-primary">medical_services</span>
-                                    Incorporar más especialidades médicas.
-                                </div>
-                                <div className="flex gap-4">
-                                    <span className="material-symbols-outlined text-primary">domain</span>
-                                    Ampliar la infraestructura.
-                                </div>
-                                <div className="flex gap-4">
-                                    <span className="material-symbols-outlined text-primary">monitor_heart</span>
-                                    Invertir en tecnología que mejore la atención médica.
-                                </div>
-                            </div> */}
                             <p> Creemos en una medicina centrada en las personas con vocación y compromiso. </p>
                         </div>
                     </div>
                 </div>
             </section>
+            <section className="py-24 bg-surface border-y border-outline-variant/10">
+                <div className="mas-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                    <div className="flex flex-col items-center">
+                        <span className="text-5xl font-bold text-primary mb-2">{totalPatients}</span>
+                        <span className="text-on-surface-variant">Pacientes</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <span className="text-5xl font-bold text-primary mb-2">{totalConsultas}</span>
+                        <span className="text-on-surface-variant">Consultas</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <span className="text-5xl font-bold text-primary mb-2">{totalProfesionales}</span>
+                        <span className="text-on-surface-variant">Profesionales</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <span className="text-5xl font-bold text-primary mb-2">{totalEspecialidades}</span>
+                        <span className="text-on-surface-variant">Especialidades</span>
+                    </div>
+                </div>
+            </section>
             <section className="py-32 bg-surface-low">
                 <div className="max-w-7xl mx-auto px-8 flex flex-col gap-4">
-                    <h3 className="text-2xl font-bold text-on-surface">Nuestros Valores</h3>
-                    <div className="h-1.5 w-20 bg-primary"></div>
-                    <div className="w-full flex justify-center gap-12">
-                        <div className="flex flex-col gap-2 items-center bg-surface-container rounded-full p-8 w-3xl border-0 border-primary hover:border-l-4 hover:border-primary transition-all duration-100">
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-primary/5 blur-2xl rounded-full"></div>
-                                <span className="material-symbols-outlined !text-4xl text-primary relative z-10">handshake</span>
-                            </div>
-                            <span className="text-on-surface font-semibold">Relación médico-paciente basada en la confianza.</span>
-                        </div>
-                        <div className="flex flex-col gap-2 items-center bg-surface-container rounded-full p-8 w-3xl border-0 border-primary hover:border-l-4 hover:border-primary transition-all duration-100">
-
-
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-primary/5 blur-2xl rounded-full"></div>
-                                <span className="material-symbols-outlined !text-4xl text-primary relative z-10">sentiment_satisfied_alt</span>
-                            </div>
-                            <span className="text-on-surface font-semibold">Calidez y buen trato en cada consulta.</span>
-                        </div>
-                        <div className="flex flex-col gap-2 items-center bg-surface-container rounded-full p-8 w-3xl border-0 border-primary hover:border-l-4 hover:border-primary transition-all duration-100">
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-primary/5 blur-2xl rounded-full"></div>
-                                <span className="material-symbols-outlined !text-4xl text-primary relative z-10">verified</span>
-                            </div>
-                            <span className="text-on-surface font-semibold">Compromiso ético y humano con cada persona.</span>
-                        </div>
+                    <h3 className="text-4xl font-bold text-on-surface text-center">Valores y Visión</h3>
+                    <div className="w-full flex flex-col items-center justify-center mb-12">
+                        <span className="text-md w-2/4  text-secondary/80 text-center mb-6">La calidad de nuestra atención se construye sobre principios claros, compromiso profesional y una mirada centrada en cada persona.</span>
+                        <div className="h-1.5 w-20 bg-primary"></div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <VisionCard icon='handshake' title="Relación médico-paciente" description="Construimos vínculos basados en la confianza, el respeto y la cercanía en cada consulta." />
+                        <VisionCard icon='sentiment_satisfied_alt' title="Calidez en la atención" description="Brindamos un trato humano y cercano, priorizando la empatía y el bienestar del paciente." />
+                        <VisionCard icon='verified' title="Compromiso ético" description="Actuamos con responsabilidad, profesionalismo y respeto en cada decisión médica." />
+                        <VisionCard icon='medical_services' title="Más especialidades médicas" description="Buscamos ampliar nuestra oferta para brindar una atención cada vez más completa." />
+                        <VisionCard icon='domain' title="Desarrollo de infraestructura" description="Trabajamos para mejorar nuestras instalaciones para ofrecer mayor comodidad y calidad." />
+                        <VisionCard icon='monitor_heart' title="Innovación tecnológica" description="Incorporamos herramientas que optimizan procesos y mejoran la atención médica." />
+                    </div>
+                </div>
+            </section>
+            <section className="py-24 bg-surface overflow-hidden" id="contact">
+                <div className="max-w-7xl mx-auto px-8">
+                    <div className="relative rounded-3xl overflow-hidden bg-primary-container p-16 md:p-24 flex flex-col items-center text-center">
+                        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-20"></div>
+                        <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-8 relative z-10">
+                            Cuidá de tu salud con un equipo médico que te acompaña
+                        </h2>
+                        <p className="text-white text-lg max-w-2xl mb-12 relative z-10 font-medium">
+                            Coordiná tu consulta de forma simple y accedé a una atención cercana, profesional y personalizada.
+                        </p>
+                        <button onClick={openTurnos} className="bg-primary-fixed text-black px-12 py-5 cursor-pointer rounded-md font-extrabold text-xl shadow-xl hover:scale-105 transition-all duration-300 relative z-10">
+                            Solicitar turno
+                        </button>
+                        <Link className="text-white mt-12 font-semibold hover:underline" href="tel:1147572389">O llamanos al 4757-2389</Link>
+                        <p className="text-white/80 text-lg mt-6">Lunes a Viernes de 8 a 19hs - Sábados de 8 a 13hs</p>
                     </div>
                 </div>
             </section>
@@ -243,6 +217,18 @@ const SpecialtyCard = ({ icon, title }: { icon: string, title: string }) => {
                 <span className="material-symbols-outlined !text-4xl text-primary relative z-10">{icon}</span>
             </div>
             <span className="text-on-surface font-semibold">{title}</span>
+        </div>
+    )
+}
+
+const VisionCard = ({ icon, title, description }: { icon: string, title: string, description: string }) => {
+    return (
+        <div className="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/30 hover:border-primary/40 hover:shadow-xl transition-all duration-300 group">
+            <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center tex-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined !text-3xl text-primary">{icon}</span>
+            </div>
+            <h3 className="text-xl font-bold text-on-surface mb-3">{title}</h3>
+            <p className="text-on-surface-variant leading-relaxed">{description}</p>
         </div>
     )
 }
