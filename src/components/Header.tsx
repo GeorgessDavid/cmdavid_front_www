@@ -8,6 +8,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { Drawer } from '@/components';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 export const Header = () => {
     const [resolvedTheme, setResolvedTheme] = useState<string>('dark');
@@ -39,12 +40,12 @@ export const Header = () => {
                         Consultorios Médicos David
                     </div>
                     <div className="hidden md:flex items-center space-x-8">
-                        <a className={`${path === '/' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
-                            href="/">Inicio</a>
-                        <a className={`${path === '/specialties' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
-                            href="/specialties">Especialidades</a>
-                        <a className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`} href="#">Equipo
-                            Médico</a>
+                        <Link className={`${path === '/' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
+                            href="/">Inicio</Link>
+                        <Link className={`${path === '/specialties' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
+                            href="/specialties">Especialidades</Link>
+                        <Link className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`} href="#">Equipo
+                            Médico</Link>
                         <a className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
                             href="#">Estudios</a>
                     </div>
@@ -68,7 +69,7 @@ export const Header = () => {
     );
 }
 
-const MobileHeader = ({resolvedTheme}: {resolvedTheme: string}) => {
+const MobileHeader = ({ resolvedTheme }: { resolvedTheme: string }) => {
     return (
         <div className="md:hidden">
             <nav className="flex justify-between items-center px-4 py-4 w-full mx-auto">
@@ -77,35 +78,11 @@ const MobileHeader = ({resolvedTheme}: {resolvedTheme: string}) => {
                     Consultorios Médicos David
                 </div>
                 <Drawer navData={[
-                        { title: 'Inicio', path: '/' },
-                        { title: 'Especialidades', path: '/specialties' },
-                        { title: 'Equipo Médico', path: '#' },
-                        { title: 'Estudios', path: '#' },
-                    ]} resolvedTheme={resolvedTheme} />
-                {/* <div className="hidden md:flex items-center space-x-8">
-                    <a className={`${path === '/' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
-                        href="/">Inicio</a>
-                    <a className={`${path === '/specialties' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
-                        href="/specialties">Especialidades</a>
-                    <a className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`} href="#">Equipo
-                        Médico</a>
-                    <a className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
-                        href="#">Estudios</a>
-                </div> */}
-                {/* <div className="flex items-center gap-2">
-                    <Tooltip title={resolvedTheme === 'dark' ? 'Modo Claro' : 'Modo Oscuro'} placement="bottom" arrow>
-                        <button
-                            onClick={toggleTheme}
-                            className="text-on-surface-variant px-6 py-2.5 rounded-md font-semibold text-sm hover:scale-95 active:scale-90 transition-all duration-200 cursor-pointer">
-                            {resolvedTheme === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
-                        </button>
-                    </Tooltip>
-                    <button
-                        onClick={hrefPrestadores}
-                        className="bg-primary text-on-primary px-6 py-2.5 rounded-md font-semibold text-sm hover:scale-95 active:scale-90 transition-all duration-200 cursor-pointer">
-                        Prestadores <ArrowOutwardIcon />
-                    </button>
-                </div> */}
+                    { title: 'Inicio', path: '/' },
+                    { title: 'Especialidades', path: '/specialties' },
+                    { title: 'Equipo Médico', path: '#' },
+                    { title: 'Estudios', path: '#' },
+                ]} resolvedTheme={resolvedTheme} />
             </nav>
         </div>
     )

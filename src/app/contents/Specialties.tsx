@@ -1,19 +1,33 @@
 'use client';
+import { useState } from 'react';
 import { useSpecialties } from '@/hooks';
-import { Loading } from '@/components';
+import { Loading, Select } from '@/components';
 
 const SpecialtiesContent = () => {
-    const { specialties, loading } = useSpecialties('ASC');
+    const [order, setOrder] = useState<'ASC' | 'DESC'>('ASC')
+    const { specialties, loading } = useSpecialties(order);
 
     return (
 
         <div className="w-full h-full bg-on-surface-high p-24 flex flex-col items-center gap-8">
-            {loading && <Loading />}
-            <div className='flex flex-col gap-8'>
+            {/* {loading && <Loading />} */}
+            <div className=' flex w-full flex-col gap-8'>
                 <h1 className="text-5xl font-bold text-primary">Especialidades</h1>
                 <p className="text-lg max-w-2xl font-inter">
                     Explorá nuestras especialidades médicas y accedé a una atención integral, con profesionales compormetidos con la calidad, la precisión clínica y el trato cercano al paciente.
                 </p>
+                <div className="w-full flex items-center justify-between gap-8">
+                    <div className="flex flex-col w-full gap-4 flex-3">
+                        <span className="text-primary !font-label font-bold text-xs uppercase tracking-widest">Buscar especialidad</span>
+                        <input className="py-4 rounded-full px-8 w-full bg-surface-container-highest border-0 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-high transition-all duration-300" placeholder="Ej: Gastroenterología" />
+                    </div>
+                    <div className="flex flex-col w-full flex-1 gap-4">
+                        <span className="text-primary !font-label font-bold text-xs uppercase tracking-widest">Ordenar por</span>
+                        <div className="relative w-full">
+                            <Select options={[{ value: 'ASC', label: 'Ascendente - A-Z' }, { value: 'DESC', label: 'Descendente - Z-A' }]} value={order} onChange={(value) => setOrder(value as 'ASC' | 'DESC')} />
+                        </div>
+                    </div>
+                </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
                     {specialties &&
                         specialties.map((specialty) => (

@@ -13,6 +13,11 @@ export default function Home() {
     const openTurnos = () => {
         window.open('https://api.whatsapp.com/send/?phone=5491135958787&text=Hola, quisiera solicitar un turno.&type=phone_number&app_absent=0', '_blank');
     }
+
+    const goToSpecialties = () => {
+        window.location.href = '/#specialties'
+    }
+
     return (
         <main>
             <section className="relative min-h-screen items-center pt-20 overflow-hidden bg-surface-container-low" id="home">
@@ -39,7 +44,7 @@ export default function Home() {
                             En Consultorios Médicos David, ofrecemos atención médica integral con un equipo de especialistas altamente calificados y tecnología de vanguardia.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <button className="bg-primary w-full md:w-auto text-on-primary px-10 py-4 rounded-md font-bold text-lg hover:shadow-xl hover:opacity-90 transition-all duration-300 cursor-pointer">Nuestras Especialidades</button>
+                            <button onClick={goToSpecialties} className="bg-primary w-full md:w-auto text-on-primary px-10 py-4 rounded-md font-bold text-lg hover:shadow-xl hover:opacity-90 transition-all duration-300 cursor-pointer">Nuestras Especialidades</button>
                             <button className="border-2 border-primary w-full md:w-auto text-primary px-10 py-rounded-md font-bold text-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer">Conocé a nuestro equipo médico</button>
                         </div>
                     </div>
@@ -210,7 +215,7 @@ export default function Home() {
                     <h3 className="text-4xl font-bold text-on-surface text-center mb-12">¿Qué opinan nuestros pacientes?</h3>
                     <div className="w-full flex items-center justify-center mb-12">
                         <div className="h-1.5 w-20 bg-primary"></div>
-                    </div>  
+                    </div>
                     <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap md:flex-wrap lg:flex-nowrap justify-center">
                         {reviews?.map((review, index) => (
                             <ReviewCard key={index} stars={review.rating} nombre={review.author} opinion={review.text} profilePicture={review.profilePhotoUrl} relativePublishTimeDescription={review.relativePublishTimeDescription} />

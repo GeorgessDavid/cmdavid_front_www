@@ -2,8 +2,8 @@ export const metadata = {
     title: 'Especialidades - CMD'
 }
 
-export default function SpecialtiesLayout({children}: {children: React.ReactNode}){
+export default function SpecialtiesLayout({ children }: { children: React.ReactNode }) {
     return (
-        <>{children}</>
+        <div className="w-full">{children}</div>
     )
 }

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { Facebook, Instagram, LinkedIn, WhatsApp, Mail } from "@mui/icons-material";
+import { Facebook as FacebookLink, Instagram as InstagramLink, LinkedIn as LinkedInLink, WhatsApp as WhatsAppLink, Mail as MailLink } from "@/constants/links";
 
 const Footer = () => {
     return (
@@ -12,19 +13,19 @@ const Footer = () => {
                     <p className="text-2xl font-bold text-primary">Consultorios Médicos David</p>
                     <p className="text-on-surface-variant text-base leading-relaxed max-w-xs">Ética profesional al servicio de tu salud.</p>
                     <div className="flex gap-4">
-                        <a href="https://www.facebook.com/ConsultoriosMedicosDavid" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
+                        <a href={FacebookLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
                             <Facebook />
                         </a>
-                        <a href="https://www.instagram.com/consultoriosmedicosdavid" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
+                        <a href={InstagramLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
                             <Instagram />
                         </a>
-                        <a href="https://www.linkedin.com/company/consultorios-medicos-david" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
+                        <a href={LinkedInLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
                             <LinkedIn />
                         </a>
-                        <a href="https://wa.me/5491135958787" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
+                        <a href={WhatsAppLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
                             <WhatsApp />
                         </a>
-                        <a href="mailto:contacto@consultoriosmedicosdavid.com.ar" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
+                        <a href={MailLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-primary/20 bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300 cursor-pointer">
                             <Mail />
                         </a>
                     </div>
