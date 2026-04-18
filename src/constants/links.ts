@@ -4,3 +4,6 @@ export const Facebook = 'https://www.facebook.com/ConsultoriosMedicosDavid';
 export const Instagram = 'https://www.instagram.com/consultoriosmedicosdavid';
 export const LinkedIn = 'https://www.linkedin.com/company/consultoriosmedicosdavid';
 export const Mail = 'mailto:contacto@consultoriosmedicosdavid.com.ar';
+export const Procedures = '/procedures';
+export const Specialties = '/specialties';
+export const Home = '/';

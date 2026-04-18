@@ -9,6 +9,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import { Drawer } from '@/components';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { Home, Specialties, Procedures } from '@/constants/links';
 
 export const Header = () => {
     const [resolvedTheme, setResolvedTheme] = useState<string>('dark');
@@ -41,13 +42,13 @@ export const Header = () => {
                     </div>
                     <div className="hidden md:flex items-center space-x-8">
                         <Link className={`${path === '/' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
-                            href="/">Inicio</Link>
+                            href={Home}>Inicio</Link>
                         <Link className={`${path === '/specialties' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
-                            href="/specialties">Especialidades</Link>
+                            href={Specialties}>Especialidades</Link>
                         <Link className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`} href="#">Equipo
                             Médico</Link>
-                        <a className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
-                            href="#">Estudios</a>
+                        <a className={`${path === '/procedures' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
+                            href={Procedures}>Estudios</a>
                     </div>
                     <div className="flex items-center gap-2">
                         <Tooltip title={resolvedTheme === 'dark' ? 'Modo Claro' : 'Modo Oscuro'} placement="bottom" arrow>
@@ -78,10 +79,10 @@ const MobileHeader = ({ resolvedTheme }: { resolvedTheme: string }) => {
                     Consultorios Médicos David
                 </div>
                 <Drawer navData={[
-                    { title: 'Inicio', path: '/' },
-                    { title: 'Especialidades', path: '/specialties' },
+                    { title: 'Inicio', path: Home },
+                    { title: 'Especialidades', path: Specialties },
                     { title: 'Equipo Médico', path: '#' },
-                    { title: 'Estudios', path: '#' },
+                    { title: 'Estudios', path: Procedures },
                 ]} resolvedTheme={resolvedTheme} />
             </nav>
         </div>
