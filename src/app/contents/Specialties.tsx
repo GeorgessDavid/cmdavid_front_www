@@ -1,16 +1,27 @@
 'use client';
 import { useState } from 'react';
 import { useSpecialties } from '@/hooks';
-import { Loading, Select } from '@/components';
+import { Select } from '@/components';
+import { LoadingComponent } from '@/components/Loading';
 
 const SpecialtiesContent = () => {
     const [order, setOrder] = useState<'ASC' | 'DESC'>('ASC')
-    const { specialties, loading } = useSpecialties(order);
+    const { specialties, loading, findSpecialties, fetchSpecialties } = useSpecialties(order);
+
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        if (value.length > 0) {
+            findSpecialties(value);
+        } else {
+            fetchSpecialties();
+        }
+    }
+
 
     return (
 
         <div className="w-full h-full bg-on-surface-high p-24 flex flex-col items-center gap-8">
-            {/* {loading && <Loading />} */}
+
             <div className=' flex w-full flex-col gap-8'>
                 <h1 className="text-5xl font-bold text-primary">Especialidades</h1>
                 <p className="text-lg max-w-2xl font-inter">
@@ -19,7 +30,7 @@ const SpecialtiesContent = () => {
                 <div className="w-full flex items-center justify-between gap-8">
                     <div className="flex flex-col w-full gap-4 flex-3">
                         <span className="text-primary !font-label font-bold text-xs uppercase tracking-widest">Buscar especialidad</span>
-                        <input className="py-4 rounded-full px-8 w-full bg-surface-container-highest border-0 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-high transition-all duration-300" placeholder="Ej: Gastroenterología" />
+                        <input onChange={handleSearch} className="py-4 rounded-full px-8 w-full bg-surface-container-highest border-0 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-high transition-all duration-300" placeholder="Ej: Gastroenterología" />
                     </div>
                     <div className="flex flex-col w-full flex-1 gap-4">
                         <span className="text-primary !font-label font-bold text-xs uppercase tracking-widest">Ordenar por</span>
@@ -28,6 +39,7 @@ const SpecialtiesContent = () => {
                         </div>
                     </div>
                 </div>
+                {loading && <LoadingComponent />}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
                     {specialties &&
                         specialties.map((specialty) => (
@@ -40,6 +52,11 @@ const SpecialtiesContent = () => {
                         ))
                     }
                 </div>
+                {specialties && specialties.length === 0 && (
+                    <div className="flex items-center justify-center w-full h-full">
+                        <span className="text-lg font-bold text-on-surface">No se encontraron especialidades</span>
+                    </div>
+                )}
             </div>
         </div>
     )
