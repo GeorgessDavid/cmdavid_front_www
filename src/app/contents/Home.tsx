@@ -69,7 +69,7 @@ export default function Home() {
                                 </div>
                             </div>
                             <Image
-                                src="/unnamed.png"
+                                src="https://media.consultoriosmedicosdavid.com.ar/silberman1346/pediatrics.jpg"
                                 alt="Pediatría"
                                 width={1920}
                                 height={1080}
@@ -104,7 +104,7 @@ export default function Home() {
                                 Diagnóstico y tratamiento avanzado de patologías traumatológicas con tecnología de última generación y un equipo de especialistas altamente calificados.
                             </p>
                         </div>
-                        <div className="md:col-span-8 bg-surface-container-low border border-outline-variant/30 rounded-2xl p-10 h-[450px] flex flex-col justify-between">
+                        <div className="md:col-span-8 bg-surface-container-low border border-outline-variant/30 rounded-2xl p-10 h-[450px] lg:h-[400px] flex flex-col justify-between">
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-12 w-full">
                                 <SpecialtyCard icon="gastroenterology" title="Gastroenterología" />
                                 <SpecialtyCard icon="female" title="Ginecología" />
