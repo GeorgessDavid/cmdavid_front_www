@@ -9,7 +9,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import { Drawer } from '@/components';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { Home, Specialties, Procedures } from '@/constants/links';
+import { Home, Specialties, Procedures, Staff } from '@/constants/links';
 
 export const Header = () => {
     const [resolvedTheme, setResolvedTheme] = useState<string>('dark');
@@ -45,7 +45,7 @@ export const Header = () => {
                             href={Home}>Inicio</Link>
                         <Link className={`${path === '/specialties' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
                             href={Specialties}>Especialidades</Link>
-                        <Link className={`text-on-surface-variant hover:text-primary font-medium transition-all duration-300`} href="#">Equipo
+                        <Link className={`${path === '/staff' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`} href={Staff}>Equipo
                             Médico</Link>
                         <a className={`${path === '/procedures' ? 'link-active' : ''} text-on-surface-variant hover:text-primary font-medium transition-all duration-300`}
                             href={Procedures}>Estudios</a>
@@ -81,7 +81,7 @@ const MobileHeader = ({ resolvedTheme }: { resolvedTheme: string }) => {
                 <Drawer navData={[
                     { title: 'Inicio', path: Home },
                     { title: 'Especialidades', path: Specialties },
-                    { title: 'Equipo Médico', path: '#' },
+                    { title: 'Equipo Médico', path: Staff },
                     { title: 'Estudios', path: Procedures },
                 ]} resolvedTheme={resolvedTheme} />
             </nav>

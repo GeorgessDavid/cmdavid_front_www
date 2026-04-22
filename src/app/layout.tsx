@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Ubuntu, Inter } from "next/font/google";
+import { Ubuntu, Inter, Manrope } from "next/font/google";
 import { Providers } from '@/theme/Providers';
 import { Header, Footer } from '@/components';
 
@@ -19,6 +19,14 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+});
+
+const manrope = Manrope({
+  weight: ['300', '400', '500', '600', '700', '800'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-manrope',
 });
 
 export const metadata: Metadata = {
@@ -42,7 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html
       lang="es"
-      className={`${ubuntu.variable} ${inter.variable} h-full`}
+      className={`${ubuntu.variable} ${inter.variable} ${manrope.variable} h-full`}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
@@ -51,7 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
           rel="stylesheet" />
       </head>
-      <body className={`${ubuntu.className} ${inter.className}`}>
+      <body className={`${ubuntu.className} ${inter.className} ${manrope.className}`}>
         <Providers>
           <Header />
           {children}

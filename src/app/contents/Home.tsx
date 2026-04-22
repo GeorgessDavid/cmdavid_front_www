@@ -4,6 +4,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { useMetrics, useReviews, useCountUp } from '@/hooks';
 import Link from "next/link";
 import { Reveal, StaggerReveal, StaggerItem } from '@/components';
+import { Staff } from '@/constants/links';
 
 export default function Home() {
     const { totalPatients, totalConsultas, totalProfesionales, totalEspecialidades } = useMetrics();
@@ -19,6 +20,9 @@ export default function Home() {
         window.location.href = '/#specialties'
     }
 
+    const openStaff = () => {
+        window.open(Staff, '_blank');
+    }
     return (
         <main>
             {/* ── Hero ─────────────────────────────────────────────────────────── */}
@@ -54,7 +58,7 @@ export default function Home() {
                         <Reveal variant="fadeUp" delay={0.46}>
                             <div className="flex flex-wrap gap-4">
                                 <button onClick={goToSpecialties} className="bg-primary w-full md:w-auto text-on-primary px-10 py-4 rounded-md font-bold text-lg hover:shadow-xl hover:opacity-90 transition-all duration-300 cursor-pointer">Nuestras Especialidades</button>
-                                <button className="border-2 border-primary w-full md:w-auto text-primary px-10 py-rounded-md font-bold text-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer">Conocé a nuestro equipo médico</button>
+                                <button onClick={openStaff} className="border-2 border-primary w-full md:w-auto text-primary px-10 py-rounded-md font-bold text-lg hover:bg-primary/5 transition-all duration-300 cursor-pointer">Conocé a nuestro equipo médico</button>
                             </div>
                         </Reveal>
                     </div>

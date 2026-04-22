@@ -7,3 +7,4 @@ export const Mail = 'mailto:contacto@consultoriosmedicosdavid.com.ar';
 export const Procedures = '/procedures';
 export const Specialties = '/specialties';
 export const Home = '/';
+export const Staff = '/staff';

@@ -52,6 +52,7 @@
   --logo-text-primary: #034d37;
   --font-ubuntu: 'Ubuntu', sans-serif;
   --font-inter: 'Inter', sans-serif;
+  --font-manrope: 'Manrope', sans-serif;
   --custom-accent-primary: #034d37;
 }
 
@@ -108,6 +109,7 @@
   --custom-accent-primary: #282a31;
   --font-ubuntu: 'Ubuntu', sans-serif;
   --font-inter: 'Inter', sans-serif;
+  --font-manrope: 'Manrope', sans-serif;
 }
 
 @theme {
@@ -164,6 +166,7 @@
   --font-headline: var(--font-ubuntu), sans-serif;
   --font-body: var(--font-ubuntu), sans-serif;
   --font-label: var(--font-inter), sans-serif;
+  --font-manrope: var(--font-manrope), sans-serif;
 
   /* Border Radius */
   --radius-default: 0.125rem;
@@ -176,6 +179,11 @@
   color: var(--color-primary);
   border-bottom: 2px solid var(--color-primary);
   padding-bottom: 0.25rem;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 html {
@@ -197,7 +205,7 @@ body {
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-.MuiTypography-root{
+.MuiTypography-root {
   font-family: 'Ubuntu', sans-serif !important;
 }
 
