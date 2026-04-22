@@ -25,7 +25,7 @@ export default function Home() {
             <section className="relative min-h-screen items-center pt-20 overflow-hidden bg-surface-container-low" id="home">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="https://media.consultoriosmedicosdavid.com.ar/silberman1346/1346_a.jpg"
+                        src="https://media.consultoriosmedicosdavid.com.ar/silberman1346/cmd_main.webp"
                         alt="CMD"
                         width={1920}
                         height={1080}
@@ -82,7 +82,7 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <Image
-                                    src="https://media.consultoriosmedicosdavid.com.ar/silberman1346/pediatrics.jpg"
+                                    src="https://media.consultoriosmedicosdavid.com.ar/silberman1346/pediatrics.webp"
                                     alt="Pediatría"
                                     width={1920}
                                     height={1080}
@@ -150,7 +150,7 @@ export default function Home() {
                         <Reveal variant="slideLeft" className="lg:w-1/2 relative">
                             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-8 border-surface-container-high">
                                 <Image
-                                    src="https://media.consultoriosmedicosdavid.com.ar/silberman1346/1346_a.jpg"
+                                    src="https://media.consultoriosmedicosdavid.com.ar/silberman1346/consultorio_4.webp"
                                     alt="CMD"
                                     width={1920}
                                     height={1080}
@@ -229,8 +229,13 @@ export default function Home() {
             <section className="py-24 bg-surface overflow-hidden" id="contact">
                 <div className="max-w-7xl mx-auto px-8">
                     <Reveal variant="zoomIn" amount={0.2}>
-                        <div className="relative rounded-3xl overflow-hidden bg-primary-container p-8 md:p-24 flex flex-col items-center text-center">
+                        <div className="group relative rounded-3xl overflow-hidden bg-primary-container p-8 md:p-24 flex flex-col items-center text-center">
                             <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-20"></div>
+                            <Image src="https://media.consultoriosmedicosdavid.com.ar/silberman1346/pasillo.webp" alt="pasillo" width={1920} height={1080}
+                                className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+                                loading="eager"
+
+                            />
                             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-8 relative z-10">
                                 Cuidá de tu salud con un equipo médico que te acompaña
                             </h2>
